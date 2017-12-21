@@ -37,6 +37,8 @@ var CaveOutcome1 = false;
 var CaveOutcome2 = false;
 var CavemanStep = 0;
 var InDeep = false;
+ $("#b8").hide
+ $("#b9").hide
 
 //Function declare
     //Shortcuts
@@ -674,10 +676,25 @@ $(".B").click(function(){
 
 //Black Village
 if( X === 10 && Y === 30 ){
-  Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You trade with them and can get weapons in exchange for food."); 
-    $(".trade").show
-//button to exchange if want to.... your choice if you want it
+  Say ("You have encountered the Black Village, a place where the shadows of the past take form.....    You can trade with them and get weapons in exchange for food."); 
+    $("#b8").show
+    $("#b9").show  
+$("#b1" + "#b2" + "#b3" + "#b4").hide();
 }
+
+$("#b8").click(function(){
+    Food - 3
+    WD + 5
+    $("#b8").hide()
+    $("#b9").hide()
+    $("#b1" + "#b2" + "#b3" + "#b4").show();
+}); 
+
+$("#b9").click(function(){
+    $("#b8").hide()
+    $("#b9").hide()
+    $("#b1" + "#b2" + "#b3" + "#b4").show();
+}); 
 
 $(".B2").click(function(){
     GainFood(-1);
